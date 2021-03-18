@@ -1,6 +1,35 @@
 // ---- Define your dialogs  and panels here ----
 
+new_perm = define_new_effective_permissions('newpermid', true, null);
+$('#sidepanel').append(new_perm);
 
+new_user = define_new_user_select_field('newpermid', 'Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
+$('#sidepanel').append(new_user);
+
+$('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
+
+new_dialog = define_new_dialog('newpermid', 'Sample Title'); 
+
+$('.perm_info').click(function(){
+    new_dialog.dialog('open'); 
+
+    new_filepath = $('#newpermid').attr('filepath'); 
+    new_username = $('#newpermid').attr('username');
+    new_perm_name = $(this).attr('permission_name'); 
+
+    console.log(new_filepath);
+    console.log(new_username); 
+    console.log(new_perm_name); 
+
+    file_obj_var = path_to_file[new_filepath]; 
+    username_obj_var = all_users[new_username]; 
+
+    explanation = allow_user_action(file_obj_var, username_obj_var, new_perm_name, explain_why = true); 
+    explained_text = get_explanation_text(explanation); 
+
+    new_dialog.text(explained_text); 
+
+})
 
 // ---- Display file structure ----
 
