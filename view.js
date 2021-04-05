@@ -3,12 +3,12 @@
 new_perm = define_new_effective_permissions('newpermid', true, null);
 $('#sidepanel').append(new_perm);
 
-new_user = define_new_user_select_field('newpermid', 'Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
+new_user = define_new_user_select_field('newpermid', 'Select User to Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
 $('#sidepanel').append(new_user);
 
 $('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
 
-new_dialog = define_new_dialog('newpermid', 'Sample Title'); 
+new_dialog = define_new_dialog('newpermid', 'Permissions Explanation'); 
 
 $('.perm_info').click(function(){
     new_dialog.dialog('open'); 
@@ -42,7 +42,8 @@ function make_file_element(file_obj) {
             <h3 id="${file_hash}_header">
                 <span class="oi oi-folder" id="${file_hash}_icon"/> ${file_obj.filename} 
                 <button class="ui-button ui-widget ui-corner-all permbutton" path="${file_hash}" id="${file_hash}_permbutton"> 
-                    <span class="oi oi-lock-unlocked" id="${file_hash}_permicon"/> 
+                    <span class="oi oi-lock-unlocked" id="${file_hash}_permicon"/>  
+                    See Permissions
                 </button>
             </h3>
         </div>`)
@@ -63,6 +64,7 @@ function make_file_element(file_obj) {
             <span class="oi oi-file" id="${file_hash}_icon"/> ${file_obj.filename}
             <button class="ui-button ui-widget ui-corner-all permbutton" path="${file_hash}" id="${file_hash}_permbutton"> 
                 <span class="oi oi-lock-unlocked" id="${file_hash}_permicon"/> 
+                See Permissions
             </button>
         </div>`)
     }
@@ -81,6 +83,10 @@ $('.folder').accordion({
     heightStyle: 'content'
 }) // TODO: start collapsed and check whether read permission exists before expanding?
 
+// $('explained_text').accordion({
+//     collapsible: true,
+//     heightStyle: 'content'
+// })
 
 // -- Connect File Structure lock buttons to the permission dialog --
 
