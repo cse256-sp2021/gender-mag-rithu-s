@@ -505,7 +505,7 @@ function define_new_user_select_field(id_prefix, select_button_text, on_user_cha
 function get_explanation_text(explanation) {
     return `
     Action allowed?: ${explanation.is_allowed};
-    \n Because of
+    Because of
     permission set for file: ${explanation.file_responsible?get_full_path(explanation.file_responsible):'N/A'}
     and for user: ${ explanation.ace_responsible ? get_user_name(explanation.ace_responsible.who) : 'N/A' }
     ${ explanation.text_explanation ? `(${explanation.text_explanation})`  : '' }
@@ -515,7 +515,7 @@ function get_explanation_text(explanation) {
 //---- some universal HTML set-up so you don't have to do it in each wrapper.html ----
 $('#filestructure').css({
     'display':'inline-block',
-    'width':'49%',
+    'width':'52%',
     'vertical-align': 'top'
 })
-$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:49%"></div>')
+$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"></div>')
