@@ -479,8 +479,8 @@ function open_user_select_dialog(to_populate_id) {
 function define_new_user_select_field(id_prefix, select_button_text, on_user_change = function(selected_user){}){
     // Make the element:
     let sel_section = $(`<div id="${id_prefix}_line" class="section">
-            <span id="${id_prefix}_field" class="ui-widget-content" style="width: 80%;display: inline-block;">&nbsp</span>
-            <button id="${id_prefix}_button" class="ui-button ui-widget ui-corner-all">${select_button_text}</button>
+            <span id="${id_prefix}_field" class="ui-widget-content" style="width: 70%; height: 25px; font-size: 18px; display: inline-block; margin-top: 20px;">&nbsp</span>
+            <button id="${id_prefix}_button" class="ui-button ui-widget ui-corner-all" style="margin-top: 4px;">${select_button_text}</button>
         </div>`)
 
     // Open user select on button click:
@@ -518,4 +518,4 @@ $('#filestructure').css({
     'width':'52%',
     'vertical-align': 'top'
 })
-$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"><p id="title"></p></div>')
+$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"><p id="title" style="font-size: 18px; margin-bottom: 10px;"></p></div>')

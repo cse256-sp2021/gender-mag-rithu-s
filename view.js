@@ -47,6 +47,12 @@ $('.perm_info').click(function(){
 
 })
 
+$('.perm_info').hover(function(){
+  $(this).css("color", "#5daeff");
+  }, function(){
+  $(this).css("color", "");
+});
+
 // ---- Display file structure ----
 
 // (recursively) makes and returns an html element (wrapped in a jquery object) for a given file object
