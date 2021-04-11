@@ -518,4 +518,4 @@ $('#filestructure').css({
     'width':'52%',
     'vertical-align': 'top'
 })
-$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"></div>')
+$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"><p id="title"></p></div>')

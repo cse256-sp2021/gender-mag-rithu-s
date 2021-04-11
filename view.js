@@ -1,6 +1,6 @@
 // ---- Define your dialogs  and panels here ----
-    permtext = 'Permissions for: ';
-    $('#sidepanel').prepend(permtext);
+    // permtext = 'Permissions for: ';
+    // $('#sidepanel').prepend(permtext);
 
     new_perm = define_new_effective_permissions('newpermid', true, null);
     $('#sidepanel').append(new_perm);
@@ -8,19 +8,23 @@
     new_user = define_new_user_select_field('newpermid', 'Select User to Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
     $('#sidepanel').append(new_user);
 
-    $('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
+   // $('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
 
     new_dialog = define_new_dialog('newpermid', 'Permissions Explanation'); 
 
-$('.viewpermbutton').click(function(){
-    console.log('test'); 
-    path = $(this).getAttribute('path');
-    $('#newpermid').attr('filepath', path);
-    console.log(path);
-    console.log(permtext);
+// $('.viewpermbutton').click(function(){
+//     console.log('test'); 
+
+//     let filepath = $('#newpermid').attr('filepath')
+//     open_permission_entry(filepath)
+
+//     //path = $(this).getAttribute('path');
+//     //$('#newpermid').attr('filepath', path);
+//     console.log(filepath);
+//     //console.log(permtext);
     
-    permtext.text('Permissions for: ' + path);
-});
+//     //permtext.text('Permissions for: ' + path);
+// });
 
 $('.perm_info').click(function(){
     new_dialog.dialog('open'); 
@@ -152,6 +156,26 @@ $('.permbutton').click( function( e ) {
 //     // Emit a click for logging purposes:
 //    // emitter.dispatchEvent(new CustomEvent('userEvent', { detail: new ClickEntry(ActionEnum.CLICK, (e.clientX + window.pageXOffset), (e.clientY + window.pageYOffset), e.target.id,new Date().getTime()) }))
 // });
+permtext = 'Permissions for: ';
+var permtext2; 
+
+$('.viewpermbutton').click(function(f){
+    //$('#sidepanel').prepend();
+    let filepath = f.currentTarget.getAttribute('path');
+
+    //console.log(filepath);
+    $('#newpermid').attr('filepath', filepath);
+    
+    f.stopPropagation()
+    permtext2 = permtext.replace('Permissions for: ', 'Permissions for: ' + filepath); 
+    //permtext.text('Permissions for: ' + filepath);
+    //console.log(permtext2); 
+    $('#title').empty().prepend(permtext2);
+
+});
+
+
+
 
 
 // ---- Assign unique ids to everything that doesn't have an ID ----
