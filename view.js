@@ -1,5 +1,5 @@
 // ---- Define your dialogs  and panels here ----
-    permtext = 'testing';
+    permtext = 'Permissions for: ';
     $('#sidepanel').prepend(permtext);
 
     new_perm = define_new_effective_permissions('newpermid', true, null);
