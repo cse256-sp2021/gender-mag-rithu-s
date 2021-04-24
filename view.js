@@ -2,15 +2,15 @@
     // permtext = 'Permissions for: ';
     // $('#sidepanel').prepend(permtext);
 
-    new_perm = define_new_effective_permissions('newpermid', true, null);
-    $('#sidepanel').append(new_perm);
+//     new_perm = define_new_effective_permissions('newpermid', true, null);
+//     $('#sidepanel').append(new_perm);
 
-    new_user = define_new_user_select_field('newpermid', 'Select User to Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
-    $('#sidepanel').append(new_user);
+//     new_user = define_new_user_select_field('newpermid', 'Select User to Check Permissions', function(selected_user){$('#newpermid').attr('username', selected_user)});
+//     $('#sidepanel').append(new_user);
 
-   // $('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
+//    // $('#newpermid').attr('filepath', '/C/presentation_documents/important_file.txt');
 
-    new_dialog = define_new_dialog('newpermid', 'Permissions Explanation'); 
+//     new_dialog = define_new_dialog('newpermid', 'Permissions Explanation'); 
 
 // $('.viewpermbutton').click(function(){
 //     console.log('test'); 
@@ -26,32 +26,32 @@
 //     //permtext.text('Permissions for: ' + path);
 // });
 
-$('.perm_info').click(function(){
-    new_dialog.dialog('open'); 
+// $('.perm_info').click(function(){
+//     new_dialog.dialog('open'); 
 
-    new_filepath = $('#newpermid').attr('filepath'); 
-    new_username = $('#newpermid').attr('username');
-    new_perm_name = $(this).attr('permission_name'); 
+//     new_filepath = $('#newpermid').attr('filepath'); 
+//     new_username = $('#newpermid').attr('username');
+//     new_perm_name = $(this).attr('permission_name'); 
 
-    console.log(new_filepath);
-    console.log(new_username); 
-    console.log(new_perm_name); 
+//     console.log(new_filepath);
+//     console.log(new_username); 
+//     console.log(new_perm_name); 
 
-    file_obj_var = path_to_file[new_filepath]; 
-    username_obj_var = all_users[new_username]; 
+//     file_obj_var = path_to_file[new_filepath]; 
+//     username_obj_var = all_users[new_username]; 
 
-    explanation = allow_user_action(file_obj_var, username_obj_var, new_perm_name, explain_why = true); 
-    explained_text = get_explanation_text(explanation); 
+//     explanation = allow_user_action(file_obj_var, username_obj_var, new_perm_name, explain_why = true); 
+//     explained_text = get_explanation_text(explanation); 
 
-    new_dialog.text(explained_text); 
+//     new_dialog.text(explained_text); 
 
-})
+// })
 
-$('.perm_info').hover(function(){
-  $(this).css("color", "#5daeff");
-  }, function(){
-  $(this).css("color", "");
-});
+// $('.perm_info').hover(function(){
+//   $(this).css("color", "#5daeff");
+//   }, function(){
+//   $(this).css("color", "");
+// });
 
 // ---- Display file structure ----
 
@@ -77,9 +77,7 @@ function make_file_element(file_obj) {
                 <button class="ui-button ui-widget ui-corner-all permbutton" path="${file_hash}" id="${file_hash}_permbutton"> 
                     Edit Permissions
                 </button>
-                <button class="ui-button ui-widget ui-corner-all viewpermbutton" path="${file_hash}" id="${file_hash}_viewpermbutton"> 
-                    View Permissions
-                </button>
+            
             </h3>
         </div>`)
 
@@ -106,9 +104,6 @@ function make_file_element(file_obj) {
             <span class="oi oi-file" id="${file_hash}_icon"/> ${file_obj.filename}
             <button class="ui-button ui-widget ui-corner-all permbutton" path="${file_hash}" id="${file_hash}_permbutton"> 
                 Edit Permissions
-            </button>
-            <button class="ui-button ui-widget ui-corner-all viewpermbutton" path="${file_hash}" id="${file_hash}_viewpermbutton"> 
-                View Permissions
             </button>
         </div>`)
     }
