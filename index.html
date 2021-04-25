@@ -91,11 +91,11 @@
                 <div title="Permission Entry" id="permentry">
                     <div id="perm_entry_inheritance_explanation" style="display:none" class="section">This permission is
                         inherited from the parent object. Make changes here to override the inherited permissions.</div>
-                    <span id="perm_entry_name_text">Name: </span>
+                    <span id="perm_entry_name_text">User: </span>
                     <span id="perm_entry_username" class="ui-widget-content section"
                         style="width:200px;display:inline-block;"></span>
-                    <button id="perm_entry_change_user" class="ui-button ui-widget ui-corner-all">Change...</button>
-                    <table id="perm_entry_table" class="ui-widget-content section">
+                    <button id="perm_entry_change_user" class="ui-button ui-widget ui-corner-all">Select User...</button>
+                    <table id="perm_entry_table" class="ui-widget-content section" style="margin-top:28px;">
                         <tr id="perm_entry_header">
                             <th id="perm_entry_header_p" width="99%">Permissions</th>
                             <th id="perm_entry_header_allow">Allow</th>
@@ -104,7 +104,7 @@
                     </table>
                 </div>
                 <!-- structure for the Advanced dialog: -->
-                <div title="Advanced Security Settings" id="advdialog" style="overflow:hidden">
+                <div title="Advanced Permissions Settings" id="advdialog" style="overflow:hidden">
                     <div id="advtabs">
                         <ul id="advtabs_titles">
                             <li id="advtab_title_permissions"><a href="#adv_permissions_tab"
@@ -122,13 +122,13 @@
                                 <table id="adv_perm_table" width="100%">
                                     <tr id="adv_perm_header">
                                         <th id="adv_perm_header_type">Type</th>
-                                        <th id="adv_perm_header_name">Name</th>
+                                        <th id="adv_perm_header_name">User</th>
                                         <th id="adv_perm_header_permission">Permission</th>
                                         <th id="adv_perm_header_inherited">Inherited from</th>
                                     </tr>
                                 </table>
                             </div>
-                            <button id="adv_perm_edit" class="ui-button ui-widget ui-corner-all">Edit...</button>
+                            <button id="adv_perm_edit" class="ui-button ui-widget ui-corner-all" style="margin-bottom:18px;">Edit...</button>
                             <div id="adv_perm_inheritance_div">
                                 <input type="checkbox" id="adv_perm_inheritance" name="inherit">
                                 <label for="adv_perm_inheritance" id="adv_perm_inheritance_label">Include inheritable
