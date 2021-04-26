@@ -1,5 +1,5 @@
 // Configuration
-show_starter_dialogs = false // set this to "false" to disable the survey and 3-minute timer. Set to "true" before submitting to MTurk!!
+show_starter_dialogs = true // set this to "false" to disable the survey and 3-minute timer. Set to "true" before submitting to MTurk!!
 
 // ---- Set up main Permissions dialog ----
 
@@ -7,7 +7,7 @@ show_starter_dialogs = false // set this to "false" to disable the survey and 3-
 // Make permissions dialog:
 perm_dialog = define_new_dialog('permdialog', title='Permissions', options = {
     // The following are standard jquery-ui options. See https://jqueryui.com/dialog/
-    height: 550,
+    height: 560,
     width: 500,
     buttons: {
         OK:{
@@ -33,8 +33,8 @@ obj_name_div = $('<div id="permdialog_objname" class="section" style="margin-bot
 // $(obj_name_div).css("color", "#5daeff");
 
 //Make the div with the explanation about special permissions/advanced settings:
-advanced_expl_div = $('<div id="permdialog_advanced_explantion_text">For special permissions or advanced settings, click <b>Advanced</b>.</div>')
-$(advanced_expl_div).css("color", "rgb(255 110 0)");
+advanced_expl_div = $('<div id="permdialog_advanced_explantion_text" >For special and inherited permissions or advanced settings, click <b>Advanced</b>.</div>')
+$(advanced_expl_div).css("color", "rgb(255 135 2)");
 
 // Make the (grouped) permission checkboxes table:
 grouped_permissions = define_grouped_permission_checkboxes('permdialog_grouped_permissions')
@@ -150,6 +150,7 @@ perm_remove_user_button.click(function(){
 // --- Append all the elements to the permissions dialog in the right order: --- 
 perm_dialog.append(obj_name_div)
 perm_dialog.append($('<div id="permissions_user_title">Group or user names:</div>'))
+perm_dialog.append($('<div id="permissions_user_exp" style="font-size:13px">Select a user/group from the following to view their permissions.</div>'))
 perm_dialog.append(file_permission_users)
 perm_dialog.append(perm_add_user_select)
 perm_add_user_select.append(perm_remove_user_button) // Cheating a bit again - add the remove button the the 'add user select' div, just so it shows up on the same line.
@@ -358,9 +359,9 @@ $('#adv_perm_inheritance').change(function(){
         // has just been turned off - pop up dialog with add/remove/cancel
         $(`<div id="add_remove_cancel" title="Security">
             Warning: if you proceed, inheritable permissions will no longer propagate to this object.<br/>
-            - Click Add to convert and add inherited parent permissions as explicit permissions on this object<br/>
-            - Click Remove to remove inherited parent permissions from this object<br/>
-            - Click Cancel if you do not want to modify inheritance settings at this time.<br/>
+            - Click <b>Add</b> to convert and add inherited parent permissions as explicit permissions on this object<br/>
+            - Click <b>Remove</b> to remove inherited parent permissions from this object<br/>
+            - Click <b>Cancel</b> if you do not want to modify inheritance settings at this time.<br/>
         </div>`).dialog({ // TODO: don't create this dialog on the fly
             modal: true,
             width: 400,
@@ -489,7 +490,7 @@ let user_select_contents = $("#user_select_dialog").dialog({
             },
         },
         OK: {
-            text: "OK",
+            text: "Select",
             id: "user-select-ok-button",
             click: function() {
                 // populate field with user name (assume these are stored in attributes)
