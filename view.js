@@ -1,4 +1,5 @@
 // ---- Define your dialogs  and panels here ----
+
     // permtext = 'Permissions for: ';
     // $('#sidepanel').prepend(permtext);
 

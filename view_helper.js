@@ -518,4 +518,6 @@ $('#filestructure').css({
     'width':'52%',
     'vertical-align': 'top'
 })
-$('#filestructure').after('<div id="sidepanel" style="display:inline-block;width:45%;margin-left:30px;"><p id="title" style="font-size: 18px; margin-bottom: 10px;"></p></div>')
+$('#filestructure').after('<div id="sidepanel" style="border:2px solid #ffa269;display:inline-block;width:22%;margin-left:305px;margin-top:20px;padding:4px;"><h3 style="text-align: center;margin-bottom:20px;">Interface Help</h3><p style="margin-bottom: 20px;">‘Deny’ overrides ‘Allow,’ so to deny a user’s permissions, you must check the ‘Deny’ checkbox instead of simply unchecking the ‘Allow’ box.</p> <p style="">If the editable permissions are greyed out, the current file has inherited permissions from its parent folder. This means that the user permissions must be changed in the folder the current file is contained within.</p> </div>')
+
+
